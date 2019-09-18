@@ -18,7 +18,7 @@ class CustomerDetails extends Component {
                             <td>{customer.fname} {customer.lname}</td>
                         </tr>
                         <tr>
-                            <td>Customer Car Modeld</td>
+                            <td>Customer Car Model</td>
                             <td>{customer['car-model']}</td>
                         </tr>
                         <tr>
