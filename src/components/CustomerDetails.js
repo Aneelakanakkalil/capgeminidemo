@@ -7,10 +7,26 @@ class CustomerDetails extends Component {
         const customer = custData[id];
         return (
             <div>
-                <h4>{customer.id}</h4>
-                <h4>{customer.fname} {customer.lname}</h4>
-                <h4>{customer['car-model']}</h4>
-                <h4>{customer['car-colour']}</h4>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Customer Id</td>
+                            <td>{customer.id}</td>
+                        </tr>
+                        <tr>
+                            <td>Customer Name</td>
+                            <td>{customer.fname} {customer.lname}</td>
+                        </tr>
+                        <tr>
+                            <td>Customer Car Modeld</td>
+                            <td>{customer['car-model']}</td>
+                        </tr>
+                        <tr>
+                            <td>Customer Car colour</td>
+                            <td>{customer['car-colour']}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         );
     }
