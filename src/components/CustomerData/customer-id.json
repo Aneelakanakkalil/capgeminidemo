@@ -1,0 +1,22 @@
+[
+    {
+        "id" : "1001",
+        "fname" : "Mathew",
+        "lname" : "Paul"
+    },
+    {
+        "id" : "1002",
+        "fname" : "Thomas",
+        "lname" : "Andrews"
+    },
+    {
+        "id" : "1003",
+        "fname" : "Job",
+        "lname" : "Jacob "
+    },
+    {
+        "id" : "1004",
+        "fname" : "Stephen",
+        "lname" : "James"
+    }
+]
