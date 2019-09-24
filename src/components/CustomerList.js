@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-
-const custData = require('./CustomerData/customer-id.json');
+import axios from 'axios'
 
 class CustomerList extends Component{
     constructor(props) {
         super(props);
         this.state ={
-            selected: false,
+            customers: [],
         }
     }
 
-    onClick(id) {
-        this.setState({ selected: id });
-    }
+    async componentDidMount() { 
+        const customers = await axios.get('/customers').then(res => res.data); 
+        this.setState({ 
+            customers 
+        }); 
+    }; 
+       
 
     render (){
         return(
@@ -26,7 +29,7 @@ class CustomerList extends Component{
                 </thead>
                 <tbody>
                     {
-                        custData.map(row =>(
+                        this.state.customers.map(row =>(
                             <tr>
                                 <td>
                                 <Link to={'/customer/' + row.id} className="App-link">{row.id}</Link>

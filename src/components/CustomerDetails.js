@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
-const custData = require('./CustomerData/customer-data.json');
+import axios from 'axios';
 
 class CustomerDetails extends Component {
+    constructor(props) { 
+        super(props); 
+        this.state ={ 
+            customer: {}, 
+        } 
+    } 
+        
+        
+    async componentDidMount() { 
+        const cid = this.props.match.params.id; 
+        const customer = await axios.get('/customers/' + cid).then(res => res.data); 
+        this.setState({ 
+            customer 
+        }); 
+    }; 
+       
     render (){
-        const { id } = this.props.match.params;
-        const customer = custData[id];
+        const customer = this.state.customer;
         return (
             <div>
                 <table>
